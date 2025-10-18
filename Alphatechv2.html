@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaTech Counsel</title>
+    <link rel="shortcut icon" href="alpha-favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Alphatechv2.css">
+    <script src="Alphatechv2.js" defer></script>
+</head>
+<body>
+    <header class="header-block">
+        <img src="alphatech-logo.jpg" alt="ATC Logo" class="header-logo">
+        
+        <!-- Desktop Navigation -->
+        <div class="header-content desktop-nav">
+            <button class="nav-btn" onclick="window.open('https://alphatechcounsel.com/', '_blank')">Home</button>
+            <button class="nav-btn" onclick="scrollToSection('offering4')">Contact Us</button>
+        </div>
+        
+        <!-- Mobile Hamburger Menu -->
+        <div class="mobile-menu-container">
+            <button class="hamburger-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <button class="nav-btn mobile-nav-btn" onclick="window.open('https://alphatechcounsel.com/', '_blank'); closeMobileMenu()">Home</button>
+                <button class="nav-btn mobile-nav-btn" onclick="scrollToSection('offering4'); closeMobileMenu()">Contact Us</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ABOUT Section with Typewriter Effect -->
+    <section id="about" class="section landing-section">
+        <main class="landing-content">
+            <p class="landing-text" id="typewriter-text"></p>
+            <span class="glyphicon glyphicon-menu-down" role="button" aria-label="Scroll down to next section" onclick="scrollToNextSection();"></span>
+        </main>
+    </section>
+
+    <section id="intro" class="section home-section">
+        <main class="main-content">
+            <p>You've put in the work, put together the initial team, validated your product offering, and now the stakes are rising—fast. Customers are demanding more, investors are circling, and your team that is stretched thin is looking to you to lead through what's next.  You are feeling the pressure and excitement of being on the verge of something big and you are ready to scale. Companies like yours are who our firm was built to serve (<a href="#" class="bubble-link jordan-story-link" data-bubble="Jordan leaned back in his chair, staring at the ceiling. His chest felt tight. His company had just closed its first six-figure ARR deal with a market-leading customer. A massive win. A game-changer. But instead of celebrating, his mind raced. The contract was signed—but could they actually deliver?\n\nThe weight of the company's future pressed down on him. Beneath the exhaustion, there was a charge of excitement. He was on the edge of something big. But if he misstepped now, it could all fall apart.\n\nThe next morning, he walked into the office with renewed determination. They had to move fast. He gathered his co-founders, whiteboards filled with priorities. What could they deliver immediately? What had to wait? His team was already stretched thin and they had a backlog of customer opportunities but they didn't have the cash to expand the team.\n\nBy midday, the weight of reality pressed harder. Two months. That's all they had before cash ran dangerously low. There was no room for error. Then—an email notification.\n\nFrom: Investor Who Had Gone Silent for Weeks\nSubject: Let's set up a call.\n\nHis pulse kicked up. Not a commitment. But movement.\nHe forwarded it to his team: We need our numbers airtight. No mistakes.\n\nThat evening, he sat alone in the dim office, eyes locked on spreadsheets. Burn rate. Payroll. Vendor costs. Customer requests. Every scenario led to the same conclusion: they were running out of time. His coffee had gone cold. He hadn't eaten since breakfast. The exhaustion gnawed at him, but he couldn't stop.\n\nThe next morning, he paced the office, waiting for the investor call to begin. His team had prepped relentlessly—financials sharpened, sales funnel mapped, value proposition crystal clear. They were as ready as they could be.\n\nThe call started smoothly. The investor, a partner at a top venture fund, asked sharp questions. I knew I had good responses as he nodded agreeable to them. Then—the curveballs.\n\nWe like what you're building, Jordan. What's your entity structure?\n\nWe're an LLC, Jordan answered.\n\nA pause.\n\nThat's a problem. We need to see a C-corp before we can close. Your lawyers can handle that.\n\nJordan's stomach twisted. The founders had debated that issue. They chose the LLC for simplicity. Now, it was a roadblock.\n\nWe can make that transition,he said evenly, though his brain was already spinning.\n\nGood, the investor replied. Also, how's equity split among founders, and what's your equity plan for early hires?\n\nJordan hesitated. The truth? It was a handshake agreement. They'd always meant to formalize it. But there was always something more urgent.\n\nWe split equity evenly among founders and are finalizing the plan for early hires.\n\nThe investor didn't miss a beat.\n\nEven splits rarely work as they don't create the right incentives, the investor quickly retorted. Those most responsible for the company's future success should have the most equity. You'll need to fix that. And you'll need a sizable option pool for employees. We'll build that into the term sheet.\n\nJordan nodded, writing it down, but his pulse pounded. He knew there was some issue with a large option pool creating a lower price for investors and dilution for founders, but he couldn't quite remember the details of the issue and what was considered standard.\n\nThe conversation continued. I'll send you a diligence request and we'll need you to set up a VDR, the investor said. I understand from our prior exchange that you want to close within the next couple of months; we'll need you to act fast on the diligence and VDR if you want to stick with that timeline, he added.\n\nThe call ended. Jordan exhaled, but his body was rigid. It had gone well—the investor was talking about a term sheet. But, overhaul their entity structure, renegotiate equity with his co-founders, prepare due diligence response in a few weeks—all while keeping the company afloat and closing customer deals? And, what the heck is a VDR, he thought.\n\nHis co-founders and team were looking to him to make things happen. He was the leader. And, this was about more than funding—it was about building the foundation for scaling his company that he knows will be great one day. He wasn't sure who to turn to, to vet his ideas and negotiate all the details. He needed someone who understands the issues and can help navigate through the obstacles to help make this vision happen.">read our archetype client story about Jordan</a>).</p>
+
+            <div id="moreContent" style="display: none;">
+                <p>We help selected emerging technology companies scale. We bring focus, experience, and service to the table to tackle anxiety-provoking obstacles and get things done. To do this, we use a relationship-driven legal counsel model that we have found yields better outcomes. Communicating and working together regularly with clients helps us to understand client priorities, customer and investor expectations, and the often-overlooked social and personality dynamics at play in business and deal-making.</p>
+                
+                <p>We're selective about who we work with and we are not for everybody—because we believe the right fit drives better results. We turn away more engagements than we accept and our clients aren't looking for the lowest cost alternative. They come to us to think strategically, move fast, and get it right the first time.</p>
+            </div>
+
+            <div class="see-more-wrapper">
+            <span class="see-more-toggle" id="seeMoreBtn" onclick="toggleText()">
+                Show more <span class="glyphicon glyphicon-menu-down chevron" id="chevron"></span>
+            </span>
+            </div>
+
+            <div class="cta-container">
+                <a href="https://outlook.office.com/bookwithme/user/1e9ef88637804628810e3d4ca84b3570%40alphatechcounsel.com?anonymous&ismsaljsauthenabled" target="_blank" class="cta-btn">Find out if we're the right fit</a>
+                <p class="cta-byline">We work with only a select group of scaling companies and our model is not right for everyone</p>
+            </div>
+        </main>
+    </section>
+
+    <!-- OFFERING 2: Subscription Counsel -->
+    <section id="offering2" class="section offering-section">
+        <main class="main-content">
+            <div class="offering-card subscription-card">
+                <img class="offering-image" src="Subscription_Counsel.png" alt="Subscription Counsel">
+                <div class="offering-content">
+                  <h2>AlphaTech Subscription Counsel</h2>
+                  <p>Need some stock option agreements prepared or input on the number of shares for a grant to a c-level hire?  Input on a proposed term sheet or a vendor proposal?  A company sale waterfall prepared?  How about documents for a customer referral program or a board of advisors?  Need input on a business model change?  Or, perhaps a sounding board for how to position a deal with an investor or strategic partner? These are the kinds of questions and requests we get every week. Consider the AlphaTech Subscription Counsel your legal partner on speed dial.</p>
+                  
+                  <div id="moreContent-offering2" style="display: none;">
+                    <p>Regular strategy calls, Q&A support, identified routine matters, and the occasional project—all for one flat quarterly rate (not runaway hourly time).  We tailor our subscription offerings for our selected clients that meet certain criteria. We sometimes even build out technology for certain clients under the subscription.  With the AlphaTech Subscription Counsel, legal issues are surfaced and resolved early, and institutional knowledge is developed over time as part of our relationship model to better position our clients for their signature deals.</p>
+                  </div>
+                  
+                  <div class="see-more-wrapper">
+                    <span class="see-more-toggle" id="seeMoreBtn-offering2" onclick="toggleText2()">
+                      Show more <span class="glyphicon glyphicon-menu-down chevron" id="chevron-offering2"></span>
+                    </span>
+                  </div>
+
+                  <div class="subscription-cta-container">
+                    <a href="https://outlook.office.com/bookwithme/user/1e9ef88637804628810e3d4ca84b3570%40alphatechcounsel.com?anonymous&ismsaljsauthenabled" target="_blank" class="subscription-cta-btn">Find out more about AlphaTech Subscription Counsel</a>
+                    <p class="subscription-byline">See how a predictable subscription model not only replaces hourly bills for work covered but also builds the legal foundation for scaling and a successful exit</p>
+                  </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- OFFERING 3: Signature Deals -->
+    <section id="offering3" class="section offering-section">
+        <main class="main-content">
+            <div class="offering-card signature-deals-card">
+                <img class="offering-image" src="Signature_deal.png" alt="Signature Deals">
+                <div class="offering-content">
+                  <h2>Signature Deals</h2>
+                  <p>When you're navigating a major transaction—a priced financing round, acquisition, strategic partnership, joint development, or company sale—we bring experience, judgment, and deal leadership to the table to help get deals done.</p>
+                  
+                  <div id="moreContent-offering3" style="display: none;">
+                    <p>We understand that the important deals often require extra effort and late nights, as the lapse of time frequently kills deals. When time coupled with the AlphaTech Subscription Counsel, we know our clients' priorities, preferences, and goals better to more efficiently and effectively get important signature deals inked.</p>
+                  </div>
+                  
+                  <div class="see-more-wrapper">
+                    <span class="see-more-toggle" id="seeMoreBtn-offering3" onclick="toggleText3()">
+                      Show more <span class="glyphicon glyphicon-menu-down chevron" id="chevron-offering3"></span>
+                    </span>
+                  </div>
+                  
+                  <div class="signature-cta-container">
+                    <a href="https://outlook.office.com/bookwithme/user/1e9ef88637804628810e3d4ca84b3570%40alphatechcounsel.com?anonymous&ismsaljsauthenabled" target="_blank" class="signature-cta-btn">Talk through your next Signature Deal</a>
+                    <p class="signature-byline">No sales pitch—just a strategy call to give you high level feedback</p>
+                  </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- OFFERING 4: Hourly Support -->
+    <section id="offering4" class="section offering-section">
+        <main class="main-content">
+            <div class="offering-card hourly-support-card">
+                <img class="offering-image" src="Hourly_support.png" alt="Custom Hourly Support">
+                <div class="offering-content">
+                  <h2>Focused, Experienced Legal Team For Companies Ready to Scale</h2>
+                  <p>If you're leading a fast-moving company through fundraising, a strategic partnership, or preparing for exit, you're not alone. We've supported founders and CEOs of emerging technology companies through hundreds of strategic deals, financings, acquisitions, company sales, and growth milestones. We help relieve the stress and anxiety when navigating strategic deals.</p>
+                  
+                  <div id="moreContent-offering4" style="display: none;">
+                    <p>What sets us apart is the combination of our focus, experience, and service that yields strategic judgment and execution discipline— a legal team that not only helps navigate complex decisions but also handles the practical legal work that has to get done. From cap tables to contracts to closings, we're built for speed, precision, and long-term trust, so you can scale without second-guessing.</p>
+                  </div>
+                  
+                  <div class="see-more-wrapper">
+                    <span class="see-more-toggle" id="seeMoreBtn-offering4" onclick="toggleText4()">
+                      Show more <span class="glyphicon glyphicon-menu-down chevron" id="chevron-offering4"></span>
+                    </span>
+                  </div>
+                  
+                  <div class="hourly-cta-container">
+                    <a href="https://outlook.office.com/bookwithme/user/1e9ef88637804628810e3d4ca84b3570%40alphatechcounsel.com?anonymous&ismsaljsauthenabled" target="_blank" class="hourly-cta-btn">If this is of interest, let's talk</a>
+                    <p class="hourly-byline">No pressure—just a conversation to see if our approach matches what you're looking for</p>
+                  </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- CONTACT Section -->
+    <section id="contact" class="section contact-section">
+        <main class="contact-main">
+            <p class="contact-typewriter-text" id="contact-typewriter-text"></p>
+        </main>
+    </section>
+</body>
+</html>

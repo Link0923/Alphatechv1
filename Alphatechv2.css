@@ -1,0 +1,987 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #ffffff;
+  line-height: 1.2;
+  overflow-x: hidden;
+}
+
+/* Header styles */
+.header-block {
+  width: 100%;
+  background-color: white;
+  opacity: 0.95;
+  border: none;
+  color: #333;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: clamp(70px, 6vw, 100px);
+  min-height: 70px;
+  max-height: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.2em, 1.5vw, 1.5em);
+  letter-spacing: 0.15em;
+  font-weight: 100;
+  /* TEMPORARY: Reference line - REMOVE WHEN DONE */
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.header-logo {
+  width: clamp(140px, 12vw, 190px);
+  height: clamp(40px, 4vw, 55px);
+  object-fit: fill;
+  margin: 0 0 0 clamp(15px, 2vw, 29px);
+  box-shadow: none;
+  background: white;
+  border-radius: 0;
+  padding: 0;
+  opacity: 1;
+  vertical-align: middle;
+}
+
+/* Desktop Navigation - visible on desktop only */
+.header-content.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding-top: 0;
+  padding-right: clamp(15px, 2vw, 30px);
+  gap: clamp(20px, 2.5vw, 35px);
+}
+
+.nav-btn {
+  position: relative;
+  background: transparent !important;
+  font-family: 'Lato', sans-serif !important;
+  display: inline-block;
+  color: #6e6e6e !important;
+  border: none;
+  font-size: clamp(0.95em, 1.15vw, 1.2em) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  cursor: pointer;
+  padding: clamp(10px, 1vw, 14px) 0;
+  margin: 0;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  color: #6fb640 !important;
+}
+
+.nav-btn::after {
+  content: "";
+  position: absolute;
+  background-color: #6fb640;
+  height: 4px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: 0.2s;
+}
+
+.nav-btn:hover::after,
+.nav-btn.active::after {
+  width: 110%;
+  left: -5%;
+}
+
+.nav-btn.active {
+  background: linear-gradient(to bottom, #d3d3d3 0%, #f5f5f5 60%, #ffffff 100%) !important;
+  color: #222 !important;
+  border-radius: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  position: relative;
+}
+
+/* Ensure active nav button text color overrides hover */
+.nav-btn.active {
+  color: #222 !important;
+}
+
+/* LANDING Section (About with typewriter) */
+.landing-section {
+  position: relative;
+  min-height: 96.5vh;
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
+    url('Home_page.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.landing-section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background-image: url('https://alphatechcounsel.com/images/editedGray.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+  z-index: 1;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
+}
+
+.landing-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3.5vw;
+  font-style: italic;
+  font-weight: 300;
+  color: white;
+  margin: 0;
+  padding: 0.5em;
+  min-height: 1.5em;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 0.3px transparent;
+  text-rendering: optimizeLegibility;
+}
+
+.glyphicon-menu-down {
+  position: absolute;
+  top: 43vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(4rem, 6vw, 6rem);
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  font-weight: 100;
+  z-index: 10;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.glyphicon-menu-down:hover {
+  color: #6fb640;
+  opacity: 1;
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* Home Section (Intro) */
+.home-section {
+  position: relative;
+  min-height: auto;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: clamp(3rem, 4vw, 5rem);
+}
+
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #414c52;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-section .main-content {
+  width: 100%;
+  padding: clamp(3vw, 5vw, 6vw) clamp(6vw, 10vw, 12vw) clamp(1.5vw, 2vw, 2vw) clamp(6vw, 12vw, 20vw);
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+}
+
+.home-section .main-content h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  margin-top: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.home-section .main-content p {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(12px, 1vw, 24px);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.home-section .jordan-story-link {
+  color: #01a77d;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.home-section .jordan-story-link:hover {
+  color: #02c995;
+  text-decoration: underline;
+}
+
+/* Jordan Story Container */
+.jordan-story-container {
+  max-width: clamp(700px, 85vw, 1000px);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.back-btn {
+  background: #01a77d;
+  color: white;
+  border: none;
+  padding: clamp(10px, 1vw, 14px) clamp(20px, 2vw, 28px);
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  cursor: pointer;
+  margin-bottom: clamp(1.5rem, 2vw, 2.5rem);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #028a66;
+  transform: translateX(-4px);
+}
+
+.jordan-story-container h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.8rem, 2vw, 2.6rem);
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.story-content {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(12px, 2.5vw, 24px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+.story-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Simple inline show more - no complex transitions */
+#dots, #dots-offering2, #dots-offering3 {
+  display: inline;
+}
+
+#moreText, #moreText-offering2, #moreText-offering3 {
+  display: none;
+}
+
+/* See more content - initially hidden */
+.see-more-content {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.see-more-content.show {
+  display: block;
+  max-height: none;
+  opacity: 1;
+  overflow: visible;
+  margin-top: -1.5rem;
+}
+
+#see-more-content-offering2.show {
+  margin-top: -1.5rem;
+}
+
+.see-more-content p {
+  margin-top: 0;
+  margin-bottom: -0.5rem;
+}
+
+.inline-text {
+  display: inline;
+}
+
+/* CTA Button Styles */
+.cta-container {
+  margin-top: clamp(30px, 3vw, 50px);
+  text-align: center;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #3c9707;
+  color: white;
+  padding: clamp(12px, 1.2vw, 18px) clamp(24px, 2.5vw, 36px);
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 1px;
+}
+
+.cta-btn:hover {
+  background: #2e7a05;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: white;
+}
+
+.cta-btn:visited,
+.cta-btn:active,
+.cta-btn:focus {
+  background: #3c9707;
+  color: white;
+  text-decoration: none;
+}
+
+.cta-byline {
+  font-size: clamp(12px, 1.2vw, 16px);
+  font-style: italic;
+  color: #c0c0c0;
+  margin: clamp(12px, 1.2vw, 18px) auto 0 auto;
+  max-width: clamp(1400px, 90vw, 2000px);
+  line-height: 1.4;
+}
+
+/* Offering cards and sections */
+.offering-section {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.offering-section .main-content {
+  max-width: 100vw;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+}
+
+.offering-section .main-content p {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(12px, 1vw, 24px);
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.offering-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0;
+  padding: clamp(3vw, 5vw, 6vw) clamp(6vw, 10vw, 12vw) clamp(1.5vw, 2vw, 2vw) clamp(6vw, 12vw, 20vw);
+  gap: clamp(1rem, 2vw, 2rem);
+  overflow: hidden;
+}
+
+.offering-image {
+  width: clamp(200px, 20vw, 320px);
+  height: clamp(180px, 18vw, 280px);
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  margin-left: 0;
+}
+
+.offering-card h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.offering-card p {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(12px, 1vw, 24px);
+  font-weight: 300;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  line-height: 1.4;
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+  padding: 0;
+}
+
+.offering-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin: 0;
+  text-align: left;
+  padding: 0;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Subscription Counsel Card - White Shading */
+.subscription-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(248,249,250,0.85) 50%, rgba(233,236,239,0.85) 100%);
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.subscription-card h2 {
+  color: #2c3e50 !important;
+}
+
+.subscription-card p {
+  color: #495057 !important;
+}
+
+.subscription-card .see-more-toggle {
+  color: #01a77d !important;
+}
+
+/* Signature Deals Card - Main content shading */
+.signature-deals-card {
+  background: rgba(65, 76, 82, 0.85);
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+.signature-deals-card h2 {
+  color: #ffffff !important;
+}
+
+.signature-deals-card p {
+  color: #ffffff !important;
+}
+
+.signature-deals-card .see-more-toggle {
+  color: #01a77d !important;
+}
+
+/* Subscription CTA Styling */
+.subscription-cta-container {
+  margin-top: clamp(12px, 1.5vw, 20px);
+  text-align: center !important;
+  padding-right: 0;
+}
+
+.subscription-cta-btn {
+  display: inline-block;
+  background: #3c9707;
+  color: white;
+  padding: clamp(12px, 1.2vw, 18px) clamp(24px, 2.5vw, 36px);
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 1px;
+}
+
+.subscription-cta-btn:hover {
+  background: #2e7a05;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: white;
+}
+
+.subscription-cta-btn:visited,
+.subscription-cta-btn:active,
+.subscription-cta-btn:focus {
+  background: #3c9707;
+  color: white;
+  text-decoration: none;
+}
+
+.subscription-byline {
+  font-size: clamp(11px, 1.1vw, 15px);
+  font-style: italic;
+  color: #969696;
+  margin: clamp(8px, 1vw, 12px) auto 0 auto !important;
+  max-width: 100% !important;
+  line-height: 1.4;
+  white-space: normal;
+  padding-bottom: clamp(1rem, 2vw, 2rem);
+  text-align: center !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Signature Deals CTA Styling */
+.signature-cta-container {
+  margin-top: clamp(12px, 1.5vw, 20px);
+  text-align: center !important;
+  padding-right: 0;
+}
+
+.signature-cta-btn {
+  display: inline-block;
+  background: #3c9707;
+  color: white;
+  padding: clamp(12px, 1.2vw, 18px) clamp(24px, 2.5vw, 36px);
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 1px;
+}
+
+.signature-cta-btn:hover {
+  background: #2e7a05;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: white;
+}
+
+.signature-cta-btn:visited,
+.signature-cta-btn:active,
+.signature-cta-btn:focus {
+  background: #3c9707;
+  color: white;
+  text-decoration: none;
+}
+
+.signature-byline {
+  font-size: clamp(12px, 1.2vw, 16px);
+  font-style: italic;
+  color: #c0c0c0 !important;
+  margin: clamp(8px, 1vw, 12px) auto 0 auto !important;
+  max-width: clamp(800px, 85vw, 1200px);
+  line-height: 1.4;
+  text-align: center !important;
+  padding-bottom: clamp(1rem, 2vw, 2rem);
+}
+
+/* Hourly Support Card - White Shading (same as Subscription Card) */
+.hourly-support-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(248,249,250,0.85) 50%, rgba(233,236,239,0.85) 100%);
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hourly-support-card h2 {
+  color: #2c3e50 !important;
+  white-space: normal !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.hourly-support-card p {
+  color: #495057 !important;
+}
+
+.hourly-support-card .see-more-toggle {
+  color: #01a77d !important;
+}
+
+/* Hourly Support CTA Container */
+.hourly-cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.hourly-cta-btn {
+  display: inline-block;
+  padding: clamp(8px, 1vw, 12px) clamp(16px, 2vw, 24px);
+  background: #3c9707;
+  color: white;
+  text-decoration: none;
+  border-radius: clamp(6px, 0.8vw, 10px);
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 0 auto clamp(8px, 1vw, 12px) auto;
+  max-width: fit-content;
+}
+
+.hourly-cta-btn:hover {
+  background: #2d7505;
+  text-decoration: none;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hourly-cta-btn:visited,
+.hourly-cta-btn:active,
+.hourly-cta-btn:focus {
+  background: #3c9707;
+  color: white;
+  text-decoration: none;
+}
+
+.hourly-byline {
+  font-size: clamp(12px, 1.2vw, 16px);
+  font-style: italic;
+  color: #999999 !important;
+  margin: clamp(8px, 1vw, 12px) auto 0 auto !important;
+  max-width: clamp(800px, 85vw, 1200px);
+  line-height: 1.4;
+  text-align: center !important;
+  padding-bottom: clamp(1rem, 2vw, 2rem);
+}
+
+/* Mobile Menu Container - visible on mobile only */
+.mobile-menu-container {
+  display: none;
+}
+
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 47px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  z-index: 1001;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  background-color: #dfdfdf;
+}
+
+.hamburger-btn span {
+  display: block;
+  height: 1.82px;
+  width: 22.5px;
+  background-color: #575757;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  margin-top: 1px;
+}
+
+.hamburger-btn span:first-child {
+  margin-top: 0;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  max-height: 300px;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 0 8px;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  display: block;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 5px;
+}
+
+/* Mobile nav button styles - matches combined.css */
+.mobile-nav-btn {
+  text-align: left !important;
+  padding: 10px 0 !important;
+  font-size: 1em !important;
+  border-bottom: 0;
+  width: 100%;
+  background: transparent !important;
+}
+
+.mobile-nav-btn::after {
+  content: "";
+  position: absolute;
+  background-color: #6fb640;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -2px;
+  transition: 0.6s;
+}
+
+.mobile-nav-btn.active::after {
+  width: 0 !important;
+}
+
+.mobile-nav-btn:hover::after {
+  width: 100%;
+}
+
+.mobile-nav-btn:hover {
+  background-color: #f8f8f8 !important;
+}
+
+/* Mobile view - hide desktop nav, show mobile menu */
+@media (max-width: 991px) {
+  .header-content.desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-container {
+    display: block;
+  }
+}
+
+/* Desktop view - show desktop nav, hide mobile menu */
+@media (min-width: 992px) {
+  .mobile-menu-container {
+    display: none !important;
+  }
+  
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+/* Center see more button below text */
+.see-more-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  position: relative;
+  transition: margin-top 1.5s ease;
+}
+
+.see-more-toggle {
+  color: #01a77d;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 4px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  z-index: 10;
+  position: relative;
+}
+
+.see-more-toggle:hover,
+.see-more-toggle:focus {
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.chevron {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  color: inherit;
+  font-size: 0.85em;
+  position: static !important;
+  transform: none !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+.chevron:hover {
+  transform: none !important;
+  color: inherit !important;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg) !important;
+}
+
+.see-more-arrow {
+  margin-left: 8px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #01a77d;
+  border-bottom: 2px solid #01a77d;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+
+.see-more-arrow.up {
+  transform: rotate(-135deg);
+  margin-bottom: -3px;
+}
+
+/* Desktop-only text visibility */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .desktop-only {
+    display: inline;
+  }
+}
+
+/* Mobile view for offering card - stack vertically */
+@media (max-width: 768px) {
+  .offering-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .offering-image {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    order: 1;
+  }
+
+  .offering-content {
+    order: 2;
+  }
+
+  .offering-card h2 {
+    order: 1;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .offering-card p {
+    order: 2;
+  }
+
+  #moreContent-offering2 {
+    order: 2;
+  }
+
+  #moreContent-offering3 {
+    order: 2;
+  }
+
+  #moreContent-offering4 {
+    order: 2;
+  }
+
+  .see-more-wrapper {
+    order: 3;
+  }
+
+  .subscription-cta-container {
+    order: 4;
+  }
+
+  .signature-cta-container {
+    order: 4;
+  }
+
+  .hourly-cta-container {
+    order: 4;
+  }
+}
+
+/* Contact Section - Same styling as landing section */
+.contact-section {
+  position: relative;
+  min-height: 96.5vh;
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('GetShitDone.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact-main {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.contact-typewriter-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3.5vw;
+  font-style: italic;
+  font-weight: 300;
+  color: white;
+  margin: 0;
+  padding: 0.5em;
+  min-height: 1.5em;
+  letter-spacing: 0.02em;
+  white-space: pre-line;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 0.3px transparent;
+  text-rendering: optimizeLegibility;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
