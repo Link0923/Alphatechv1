@@ -155,7 +155,7 @@ body {
   transform: translate(-50%, -50%);
   width: 60%;
   height: 60%;
-  background-image: url('https://alphatechcounsel.com/images/editedGray.png');
+  background-image: url('editedGray.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50%;
@@ -352,7 +352,7 @@ body {
 
 /* CTA Button Styles */
 .cta-container {
-  margin-top: clamp(30px, 3vw, 50px);
+  margin-top: clamp(12px, 1.5vw, 20px);
   text-align: center;
 }
 
@@ -639,17 +639,17 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: clamp(12px, 1.5vw, 20px);
 }
 
 .hourly-cta-btn {
   display: inline-block;
-  padding: clamp(8px, 1vw, 12px) clamp(16px, 2vw, 24px);
+  padding: clamp(12px, 1.2vw, 18px) clamp(24px, 2.5vw, 36px);
   background: #3c9707;
   color: white;
   text-decoration: none;
   border-radius: clamp(6px, 0.8vw, 10px);
-  font-size: clamp(14px, 1.2vw, 18px);
+  font-size: clamp(14px, 1.8vw, 18px);
   font-weight: 500;
   transition: background 0.3s ease, transform 0.2s ease;
   margin: 0 auto clamp(8px, 1vw, 12px) auto;
