@@ -142,9 +142,8 @@ body {
   justify-content: center;
   background: 
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
-    url('Home_page.jpg') no-repeat center center fixed;
+    url('Home_page.jpg') no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 .landing-section::before {
@@ -950,9 +949,8 @@ body {
   justify-content: center;
   background: 
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    url('GetShitDone.png') no-repeat center center fixed;
+    url('GetShitDone.png') no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 .contact-main {
