@@ -62,14 +62,32 @@ function typeWriter(text, elementId, speed = 100) {
     typeChar();
 }
 
-// Start typewriter effect when page loads
-window.addEventListener('load', () => {
-    setTimeout(() => {
+// Start typewriter effect when page loads - with iOS compatibility
+let landingTypewriterStarted = false;
+
+function startLandingTypewriter() {
+    if (landingTypewriterStarted) return;
+    const element = document.getElementById('typewriter-text');
+    if (element && element.innerHTML === '') {
+        landingTypewriterStarted = true;
         typeWriter('Scaling Smart by Staying Connected', 'typewriter-text', 80);
-    }, 500);
+    }
+}
+
+window.addEventListener('load', () => {
+    setTimeout(startLandingTypewriter, 500);
 });
 
-// Trigger contact typewriter when scrolling into view
+// Fallback for iOS devices that might not fire 'load' event properly
+if (document.readyState === 'complete') {
+    setTimeout(startLandingTypewriter, 500);
+} else {
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(startLandingTypewriter, 500);
+    });
+}
+
+// Trigger contact typewriter when scrolling into view - with iOS compatibility
 window.addEventListener('scroll', () => {
     const contactSection = document.getElementById('contact');
     const contactTypewriterElement = document.getElementById('contact-typewriter-text');
@@ -85,7 +103,7 @@ window.addEventListener('scroll', () => {
             }, 300);
         }
     }
-});
+}, { passive: true });
 
 // Jordan story functionality - replaces main content
 (() => {
