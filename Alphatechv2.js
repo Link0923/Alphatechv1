@@ -171,6 +171,7 @@ function toggleText() {
     const moreContent = document.getElementById("moreContent");
     const btnText = document.getElementById("seeMoreBtn");
     const chevron = document.getElementById("chevron");
+    const ellipsis = document.getElementById("ellipsis");
 
     if (moreContent.style.display === "none" || moreContent.style.display === "") {
         // Expand with smooth animation
@@ -193,6 +194,11 @@ function toggleText() {
         
         btnText.childNodes[0].textContent = "Show less ";
         chevron.classList.add("rotate");
+        
+        // Change ellipsis to single period
+        if (ellipsis) {
+            ellipsis.textContent = ".";
+        }
     } else {
         // Collapse with smooth animation
         const currentHeight = moreContent.scrollHeight;
@@ -211,6 +217,11 @@ function toggleText() {
         
         btnText.childNodes[0].textContent = "Show more ";
         chevron.classList.remove("rotate");
+        
+        // Change back to ellipsis
+        if (ellipsis) {
+            ellipsis.textContent = "...";
+        }
     }
 }
 
@@ -219,6 +230,7 @@ function toggleText2() {
     const moreContent = document.getElementById("moreContent-offering2");
     const btnText = document.getElementById("seeMoreBtn-offering2");
     const chevron = document.getElementById("chevron-offering2");
+    const ellipsis = document.getElementById("ellipsis-offering2");
 
     if (moreContent.style.display === "none" || moreContent.style.display === "") {
         // Expand with smooth animation
@@ -241,6 +253,11 @@ function toggleText2() {
         
         btnText.childNodes[0].textContent = "Show less ";
         chevron.classList.add("rotate");
+        
+        // Change ellipsis to single period
+        if (ellipsis) {
+            ellipsis.textContent = ".";
+        }
     } else {
         // Collapse with smooth animation
         const currentHeight = moreContent.scrollHeight;
@@ -259,6 +276,11 @@ function toggleText2() {
         
         btnText.childNodes[0].textContent = "Show more ";
         chevron.classList.remove("rotate");
+        
+        // Change back to ellipsis
+        if (ellipsis) {
+            ellipsis.textContent = "...";
+        }
     }
 }
 
@@ -267,6 +289,7 @@ function toggleText3() {
     const moreContent = document.getElementById("moreContent-offering3");
     const btnText = document.getElementById("seeMoreBtn-offering3");
     const chevron = document.getElementById("chevron-offering3");
+    const ellipsis = document.getElementById("ellipsis-offering3");
 
     if (!moreContent || !btnText) {
         console.error("Elements not found for offering 3");
@@ -294,6 +317,11 @@ function toggleText3() {
         
         btnText.childNodes[0].textContent = "Show less ";
         chevron.classList.add("rotate");
+        
+        // Change ellipsis to single period
+        if (ellipsis) {
+            ellipsis.textContent = ".";
+        }
     } else {
         // Collapse with smooth animation
         const currentHeight = moreContent.scrollHeight;
@@ -312,6 +340,11 @@ function toggleText3() {
         
         btnText.childNodes[0].textContent = "Show more ";
         chevron.classList.remove("rotate");
+        
+        // Change back to ellipsis
+        if (ellipsis) {
+            ellipsis.textContent = "...";
+        }
     }
 }
 
@@ -320,6 +353,7 @@ function toggleText4() {
     const moreContent = document.getElementById("moreContent-offering4");
     const btnText = document.getElementById("seeMoreBtn-offering4");
     const chevron = document.getElementById("chevron-offering4");
+    const ellipsis = document.getElementById("ellipsis-offering4");
 
     if (!moreContent || !btnText) {
         console.error("Elements not found for offering 4");
@@ -347,6 +381,11 @@ function toggleText4() {
         
         btnText.childNodes[0].textContent = "Show less ";
         chevron.classList.add("rotate");
+        
+        // Change ellipsis to single period
+        if (ellipsis) {
+            ellipsis.textContent = ".";
+        }
     } else {
         // Collapse with smooth animation
         const currentHeight = moreContent.scrollHeight;
@@ -365,5 +404,10 @@ function toggleText4() {
         
         btnText.childNodes[0].textContent = "Show more ";
         chevron.classList.remove("rotate");
+        
+        // Change back to ellipsis
+        if (ellipsis) {
+            ellipsis.textContent = "...";
+        }
     }
 }
